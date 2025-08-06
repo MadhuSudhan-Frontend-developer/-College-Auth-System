@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+📘 College Auth System — Full Stack Project Documentation
+Table of Contents
+1.	Project Overview
+2.	Tech Stack
+3.	Project Structure
+4.	How to Run the Project
+5.	Frontend Setup (React)
+6.	Backend Setup (Spring Boot)
+7.	Database Configuration (MySQL)
+8.	Feature Overview
+9.	Key Code Explanations
+10.	Future Improvements
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+✅ Project Overview
+The College Auth System is a full-stack authentication and course management app. It allows users to register, login, and view course-related content securely. After logging in, the homepage adapts and shows a personalized profile with a logout option.
 
-## Available Scripts
+🛠️ Tech Stack
+•	Frontend: React.js (with react-router-dom, carousel)
+•	Backend: Spring Boot (Java)
+•	Database: MySQL
+•	Tools: Postman (for testing API), IntelliJ/Eclipse, VSCode, npm
 
-In the project directory, you can run:
+<img width="731" height="1271" alt="Screenshot 2025-08-06 162445" src="https://github.com/user-attachments/assets/2c338b46-bf16-46ff-a45b-9a18160b7f30" />
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+▶️ How to Run the Project
+Step 1: MySQL Setup
+1.	Open MySQL.
+2.	Run:
 
-### `npm test`
+CREATE DATABASE college_auth;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Step 2: Spring Boot Backend Setup
+1.	Open backend folder in IntelliJ or Eclipse.
+2.	Configure application.properties:
 
-### `npm run build`
+spring.application.name=userLogin
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+server.port=8082
+spring.datasource.url=jdbc:mysql://localhost:3306/college_auth
+spring.datasource.username=root
+spring.datasource.password=
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3.	Run the Spring Boot app.
+•	Endpoints:
+o	POST /api/users/register
+o	POST /api/users/login
 
-### `npm run eject`
+Step 3: React Frontend Setup
+1.	Navigate to the frontend folder:
+bash
+CopyEdit
+cd frontend
+2.	Install dependencies:
+npm install
+3.	Start React app:
+npm start
+•	Runs on: http://localhost:3000
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+✅ FRONTEND (React.js)
+•	Create with:
+npx create-react-app college-frontend
+cd college-frontend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm install axios react-router-dom
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+Run the program
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+first select the UserLoginApplication.java and run the springboot application
 
-### Deployment
+ 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Open vscode and select the path is college-frontend
+run by using 
+npm start
+ 
+Show on browser this page
 
-### `npm run build` fails to minify
+<img width="940" height="483" alt="image" src="https://github.com/user-attachments/assets/e7587b09-2d75-41a2-bd06-9b4715ccaebd" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+ 
+After you registered then stored data in mysql 
+ 
+<img width="940" height="425" alt="image" src="https://github.com/user-attachments/assets/9a6e879f-77a7-49d1-adb6-fbc878558baa" />
+
+
+
+After register is successful
+and click login button, 
+type email and password
+
+ <img width="940" height="403" alt="image" src="https://github.com/user-attachments/assets/0d25b3f7-5287-471a-8148-eec1eecb8707" />
+
+
+Login is enter email and password
+ 
+
+
+<img width="940" height="337" alt="image" src="https://github.com/user-attachments/assets/e4496e19-0408-4864-9639-6411554a07bb" />
+
+
+
+After login is successful then redirect to homepage with profile.
+
+<img width="940" height="494" alt="image" src="https://github.com/user-attachments/assets/d2e27615-39ac-4aa6-8107-5ff3904b564c" />
+
+ 
