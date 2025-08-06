@@ -121,3 +121,4 @@ After login is successful then redirect to homepage with profile.
 <img width="940" height="494" alt="image" src="https://github.com/user-attachments/assets/d2e27615-39ac-4aa6-8107-5ff3904b564c" />
 
  
+NOTE: VSCODE AND SELECT  COLLEGEFRONTEND IN  FRONTEND , INSTALL NODE< NPM INSTALL>
